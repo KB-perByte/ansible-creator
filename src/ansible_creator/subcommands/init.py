@@ -32,6 +32,7 @@ class Init:
         self._namespace: str = config.namespace
         self._collection_name: str = config.collection_name
         self._init_path: str = config.init_path
+        self._galaxy_tag: list[str] = config.galaxy_tag
         self._force = config.force
         self._creator_version = config.creator_version
         self._project = config.project
@@ -109,6 +110,7 @@ class Init:
                     "namespace": self._namespace,
                     "collection_name": self._collection_name,
                     "creator_version": self._creator_version,
+                    "galaxy_tag": self._galaxy_tag,
                 },
             )
             copier.copy_containers()

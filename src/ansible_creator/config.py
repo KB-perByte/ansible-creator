@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import TYPE_CHECKING
 
 from ansible_creator.exceptions import CreatorError
@@ -22,6 +22,7 @@ class Config:
     subcommand: str
 
     collection: str = ""
+    galaxy_tag: list = field(default_factory=list)
     force: bool = False
     init_path: str = "./"
     project: str = ""
@@ -69,6 +70,7 @@ class Config:
 
         if self.collection:
             fqcn = self.collection.split(".", maxsplit=1)
+            # object.__setattr__(self, "galaxy_tag", self.galaxy_tag)
             object.__setattr__(self, "namespace", fqcn[0])
             object.__setattr__(self, "collection_name", fqcn[-1])
 

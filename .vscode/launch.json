@@ -18,8 +18,10 @@
       "args": [
         "init",
         "testns.testname",
+        "--galaxy-tag",
+        "network,security",
         "--init-path",
-        "/home/user/..path/to/collections/ansible_collections"
+        "/home/sagpaul/Work/foundation/collections/ansible_collections/cisco/test"
       ],
       "cwd": "${workspaceFolder}/src",
       "justMyCode": false

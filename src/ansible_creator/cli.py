@@ -144,6 +144,15 @@ class Cli:
         )
 
         init_command_parser.add_argument(
+            "--galaxy-tag",
+            help=(
+                "The tag in galaxy.yaml. This value is used as"
+                " as a group identifier to the collection. Example: [application,cloud,eda"
+                " ,networking,security,windows]. Required when `--project=collection`."
+            ),
+        )
+
+        init_command_parser.add_argument(
             "--project",
             choices=["ansible-project", "collection"],
             default="collection",
